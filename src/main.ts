@@ -1,5 +1,4 @@
 import './assets/styles/style.css';
-/*
 import Countdown from './assets/scripts/countdown';
 
 const countdown = new Countdown({
@@ -22,4 +21,3 @@ const countdown = new Countdown({
 });
 
 countdown.init();
-*/
