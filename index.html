@@ -12,6 +12,243 @@
     </head>
 
     <body>
+
+        <!--
+            @mixin pannel {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 50%;
+            }
+
+            @mixin fixedPannel {
+                z-index: 10;
+                display: flex;
+                justify-content: center;
+                overflow: hidden;
+            }
+
+            @mixin face {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                overflow: hidden;
+            }
+
+            @mixin number {
+                display: block;
+                font-size: 8vw;
+                line-height: 8vw;
+                font-weight: 400;
+                color: #fff;
+                
+                @media screen and (min-width: variables.$screen-sm) {
+                    font-size: 4.8rem;
+                    line-height: 4.8rem;
+                }
+            }
+
+            .countdown {
+                position: relative;
+                z-index: 50;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 4%;
+                width: 100%;
+                
+                @media screen and (min-width: variables.$screen-sm) {
+                    width: 50rem;
+                }
+                
+                &__display {
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    padding-top: 100%;
+                    border-radius: 0.4rem;
+                    background-color: var(--color-primary);
+                    perspective: 300px;
+                }
+                
+                &__pannel {
+                    @include pannel;
+
+                    &--top {
+                        @include fixedPannel;
+                        top: 0;
+                        align-items: flex-end;
+                        background-color: var(--color-primary-alt);
+                    }
+
+                    &--bottom {
+                        @include fixedPannel;
+                        bottom: 0;
+                        align-items: flex-start;
+                        background-color: var(--color-primary);
+                    }
+
+                    &--flip {
+                        width: 100%;
+                        z-index: 20;
+                        top: 0;
+                        transform-origin: bottom;
+                        transform-style: preserve-3d;
+                    }
+                }
+
+                &__face {
+                    @include face;
+
+                    &--front {
+                        align-items: flex-end;
+                        background-color: var(--color-primary-alt);
+                    }
+
+                    &--back {
+                        align-items: flex-start;
+                        transform: rotateY(180deg) rotate(180deg);
+                        background-color: var(--color-primary);
+                    }
+                }
+
+                &__number {
+                    @include number;
+
+                    &--top {
+                        transform: translateY(-50%);
+                    }
+
+                    &--bottom {
+                        transform: translateY(50%);
+                    }
+                }
+                
+                &__unit {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translate(-50%, 100%);
+                    padding-top: 10%;
+                    font-size: 3vw;
+                    font-weight: 500;
+                    color: var(--color-secondary-text);
+                    text-transform: uppercase;
+                    letter-spacing: 0.1rem;
+                    
+                    @media screen and (min-width: variables.$screen-sm) {
+                        font-size: 1.4rem;
+                        padding-top: 1rem;
+                    }
+                }
+            }
+        -->
+
+        <!-- Countdown -->
+        <div class="countdown">
+
+            <!-- Days -->
+            <div class="countdown__display">
+                <!-- Days top pannel -->
+                <div class="countdown__pannel countdown__pannel--top">
+                    <span class="countdown__number countdown__number--bottom days-next-time"></span>
+                </div>
+                <!-- Days flip pannel -->
+                <div class="countdown__pannel countdown__pannel--flip" id="days-flip-pannel">
+                    <!-- Days front face -->
+                    <div class="countdown__face countdown__face--front" id="days-front-face">
+                        <span class="countdown__number countdown__number--bottom days-current-time"></span>
+                    </div>
+                    <!-- Days back face -->
+                    <div class="countdown__face countdown__face--back">
+                        <span class="countdown__number countdown__number--top days-next-time"></span>
+                    </div>
+                </div>
+                <!-- Days bottom pannel -->
+                <div class="countdown__pannel countdown__pannel--bottom">
+                    <span class="countdown__number countdown__number--top days-current-time"></span>
+                </div>
+                <p class="countdown__unit">jours</p>
+            </div>
+
+            <!-- Hours -->
+            <div class="countdown__display">
+                <!-- Hours top pannel -->
+                <div class="countdown__pannel countdown__pannel--top">
+                    <span class="countdown__number countdown__number--bottom hours-next-time"></span>
+                </div>
+                <!-- Hours flip pannel -->
+                <div class="countdown__pannel countdown__pannel--flip" id="hours-flip-pannel">
+                    <!-- Hours front face -->
+                    <div class="countdown__face countdown__face--front" id="hours-front-face">
+                        <span class="countdown__number countdown__number--bottom hours-current-time"></span>
+                    </div>
+                    <!-- Hours back face -->
+                    <div class="countdown__face countdown__face--back">
+                        <span class="countdown__number countdown__number--top hours-next-time"></span>
+                    </div>
+                </div>
+                <!-- Hours bottom pannel -->
+                <div class="countdown__pannel countdown__pannel--bottom">
+                    <span class="countdown__number countdown__number--top hours-current-time"></span>
+                </div>
+                <p class="countdown__unit">Heures</p>
+            </div>
+
+            <!-- Minutes -->
+            <div class="countdown__display">
+                <!-- Minutes top pannel -->
+                <div class="countdown__pannel countdown__pannel--top">
+                    <span class="countdown__number countdown__number--bottom minutes-next-time"></span>
+                </div>
+                <!-- Minutes flip pannel -->
+                <div class="countdown__pannel countdown__pannel--flip" id="minutes-flip-pannel">
+                    <!-- Minutes front face -->
+                    <div class="countdown__face countdown__face--front" id="minutes-front-face">
+                        <span class="countdown__number countdown__number--bottom minutes-current-time"></span>
+                    </div>
+                    <!-- Minutes back face -->
+                    <div class="countdown__face countdown__face--back">
+                        <span class="countdown__number countdown__number--top minutes-next-time"></span>
+                    </div>
+                </div>
+                <!-- Minutes bottom pannel -->
+                <div class="countdown__pannel countdown__pannel--bottom">
+                    <span class="countdown__number countdown__number--top minutes-current-time"></span>
+                </div>
+                <p class="countdown__unit">Minutes</p>
+            </div>
+
+            <!-- Seconds -->
+            <div class="countdown__display">
+                <!-- Seconds top pannel -->
+                <div class="countdown__pannel countdown__pannel--top">
+                    <span class="countdown__number countdown__number--bottom seconds-next-time"></span>
+                </div>
+                <!-- Seconds flip pannel -->
+                <div class="countdown__pannel countdown__pannel--flip" id="seconds-flip-pannel">
+                    <!-- Seconds front face -->
+                    <div class="countdown__face countdown__face--front" id="seconds-front-face">
+                        <span class="countdown__number countdown__number--bottom seconds-current-time"></span>
+                    </div>
+                    <!-- Seconds back face -->
+                    <div class="countdown__face countdown__face--back">
+                        <span class="countdown__number countdown__number--top seconds-next-time"></span>
+                    </div>
+                </div>
+                <!-- Seconds bottom pannel -->
+                <div class="countdown__pannel countdown__pannel--bottom">
+                    <span class="countdown__number countdown__number--top seconds-current-time"></span>
+                </div>
+                <p class="countdown__unit">Secondes</p>
+            </div>
+
+        </div>
       
         <script type="module" src="/src/main.ts"></script>
     </body>
