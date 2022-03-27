@@ -16,6 +16,7 @@ module.exports = {
       "white": "hsl(0, 0%, 100%)",
       "black": "hsl(234, 17%, 12%)",
       "dark-desaturated-blue": "hsl(236, 21%, 26%)",
+      "very-dark-desaturated-blue": "#2C2C44",
       "very-dark-blue": "hsl(235, 16%, 14%)",
     },
     extend: {
@@ -27,5 +28,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  corePlugins: {
+    aspectRatio: false,
+  },
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }
