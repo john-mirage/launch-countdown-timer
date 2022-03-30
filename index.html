@@ -12,306 +12,187 @@
     </head>
 
     <!-- Page -->
-    <body class="flex flex-col justify-start items-center w-full min-h-screen px-6 pt-[8.75rem] pb-12 bg-black">
+    <body class="w-full h-auto bg-black">
 
-        <!-- Title -->
-        <h1 class="text-center text-lg font-bold text-white leading-6 tracking-[0.375rem] uppercase mb-14">we're launching soon</h1>
+        <!-- Page container -->
+        <main class="container flex flex-col justify-start items-center min-h-screen pb-12 px-4 xs:mx-auto sm:px-6 md:px-8">
 
-        <!--
-            @mixin pannel {
-                position: absolute;
-                left: 0;
-                width: 100%;
-                height: 50%;
-            }
+            <!-- Title -->
+            <h1 class="text-center text-lg font-bold text-white leading-6 tracking-title uppercase mb-14">we're launching soon</h1>
+            
+            <!-- Countdown -->
+            <div class="flex flex-col justify-start items-center gap-3 w-full xs:flex-row xs:justify-between xs:items-start">
 
-            @mixin fixedPannel {
-                z-index: 10;
-                display: flex;
-                justify-content: center;
-                overflow: hidden;
-            }
-
-            @mixin face {
-                position: absolute;
-                top: 0;
-                left: 0;
-                display: flex;
-                justify-content: center;
-                width: 100%;
-                height: 100%;
-                -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-                overflow: hidden;
-            }
-
-            @mixin number {
-                display: block;
-                font-size: 8vw;
-                line-height: 8vw;
-                font-weight: 400;
-                color: #fff;
-                
-                @media screen and (min-width: variables.$screen-sm) {
-                    font-size: 4.8rem;
-                    line-height: 4.8rem;
-                }
-            }
-
-            .countdown {
-                position: relative;
-                z-index: 50;
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 4%;
-                width: 100%;
-                
-                @media screen and (min-width: variables.$screen-sm) {
-                    width: 50rem;
-                }
-                
-                &__display {
-                    position: relative;
-                    width: 100%;
-                    height: auto;
-                    padding-top: 100%;
-                    border-radius: 0.4rem;
-                    background-color: var(--color-primary);
-                    perspective: 300px;
-                }
-                
-                &__pannel {
-                    @include pannel;
-
-                    &--top {
-                        @include fixedPannel;
-                        top: 0;
-                        align-items: flex-end;
-                        background-color: var(--color-primary-alt);
-                    }
-
-                    &--bottom {
-                        @include fixedPannel;
-                        bottom: 0;
-                        align-items: flex-start;
-                        background-color: var(--color-primary);
-                    }
-
-                    &--flip {
-                        z-index: 20;
-                        top: 0;
-                        transform-origin: bottom;
-                        transform-style: preserve-3d;
-                    }
-                }
-
-                &__face {
-                    @include face;
-
-                    &--front {
-                        align-items: flex-end;
-                        background-color: var(--color-primary-alt);
-                    }
-
-                    &--back {
-                        align-items: flex-start;
-                        transform: rotateY(180deg) rotate(180deg);
-                        background-color: var(--color-primary);
-                    }
-                }
-
-                &__number {
-                    @include number;
-
-                    &--top {
-                        transform: translateY(-50%);
-                    }
-
-                    &--bottom {
-                        transform: translateY(50%);
-                    }
-                }
-                
-                &__unit {
-                    position: absolute;
-                    bottom: 0;
-                    left: 50%;
-                    transform: translate(-50%, 100%);
-                    padding-top: 10%;
-                    font-size: 3vw;
-                    font-weight: 500;
-                    color: var(--color-secondary-text);
-                    text-transform: uppercase;
-                    letter-spacing: 0.1rem;
-                    
-                    @media screen and (min-width: variables.$screen-sm) {
-                        font-size: 1.4rem;
-                        padding-top: 1rem;
-                    }
-                }
-            }
-        -->
-
-        <!-- Countdown -->
-        <div class="countdown relative z-50 grid grid-cols-4 gap-4 w-full">
-
-            <!-- Countdown section -->
-            <div>
-                <!-- Days -->
-                <div class="aspect-w-[35] aspect-h-[33] mb-3">
-                    <!-- Days display -->
-                    <div class="perspective bg-dark-desaturated-blue rounded-[0.25rem]">
-                        <!-- Days top pannel -->
-                        <div class="absolute top-0 left-0 w-full h-1/2 z-10 flex flex-row justify-center items-end overflow-hidden bg-very-dark-desaturated-blue">
-                            <!-- Days bottom number -->
-                            <span class="days-next-time block text-4xl leading-9 font-bold -tracking-[0.125rem] translate-y-1/2 text-soft-red"></span>
-                        </div>
-                        <!-- Days flip pannel -->
-                        <div class="absolute z-20 top-0 left-0 w-full h-1/2 origin-bottom preserve-3d" id="days-flip-pannel">
-                            <!-- Days front face -->
-                            <div class="absolute top-0 left-0 flex flex-row justify-center items-end w-full h-full backface-hidden overflow-hidden bg-very-dark-desaturated-blue" id="days-front-face">
-                                <!-- Days bottom number -->
-                                <span class="days-current-time block text-4xl leading-9 font-bold -tracking-[0.125rem] translate-y-1/2 text-soft-red"></span>
+                <!-- Countdown unit -->
+                <div class="text-center">
+                    <!-- Display -->
+                    <div class="w-display-xs h-display-xs rounded bg-[#000] overflow-hidden mb-2 sm:w-display-sm sm:h-display-sm md:rounded-lg md:w-display-md md:h-display-md lg:w-display-lg lg:h-display-lg">
+                        <!-- Pannel -->
+                        <div class="relative w-full h-pannel-xs perspective rounded overflow-hidden sm:h-pannel-sm md:rounded-lg md:h-pannel-md lg:h-pannel-lg">
+                            <!-- Top pannel -->
+                            <div class="flex w-full h-1/2 bg-very-dark-desaturated-blue overflow-hidden">
+                                <span class="days-next-time block w-full mt-auto text-2xl leading-6 font-bold text-soft-red translate-y-1/2">00</span>
                             </div>
-                            <!-- Days back face -->
-                            <div class="absolute top-0 left-0 flex flex-row justify-center items-start w-full h-full backface-hidden overflow-hidden bg-dark-desaturated-blue rotate-y-full">
-                                <!-- Days top number -->
-                                <span class="days-next-time block text-4xl leading-9 font-bold -tracking-[0.125rem] -translate-y-1/2 text-soft-red"></span>
+                            <!-- Bottom pannel -->
+                            <div class="w-full h-1/2 bg-dark-desaturated-blue overflow-hidden">
+                                <span class="days-current-time block w-full text-2xl leading-6 font-bold text-soft-red -translate-y-1/2">00</span>
                             </div>
-                        </div>
-                        <!-- Days bottom pannel -->
-                        <div class="absolute bottom-0 left-0 w-full h-1/2 flex flex-row justify-center items-start overflow-hidden bg-dark-desaturated-blue">
-                            <!-- Days top number -->
-                            <span class="days-current-time block text-4xl leading-9 font-bold -tracking-[0.125rem] -translate-y-1/2 text-soft-red"></span>
+                            <!-- Flip pannel -->
+                            <div class="absolute z-20 top-0 left-0 w-full h-1/2 origin-bottom preserve-3d" id="days-flip-pannel">
+                                <!-- Front face -->
+                                <div class="absolute top-0 left-0 flex w-full h-full backface-hidden overflow-hidden bg-very-dark-desaturated-blue">
+                                    <span class="days-current-time block w-full mt-auto text-2xl leading-6 font-bold text-soft-red translate-y-1/2">00</span>
+                                </div>
+                                <!-- Back face -->
+                                <div class="absolute top-0 left-0 w-full h-full backface-hidden overflow-hidden bg-dark-desaturated-blue rotate-y-full">
+                                    <span class="days-next-time block w-full text-2xl leading-6 font-bold text-soft-red -translate-y-1/2">00</span>
+                                </div>
+                            </div>
+                            <!-- Circles -->
+                            <div class="absolute z-30 top-1/2 left-0 -translate-y-1/2 flex flex-row justify-between items-start w-full h-1.5 md:h-3">
+                                <!-- Left circle -->
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#000] -translate-x-1/2 md:w-3 md:h-3"></div>
+                                <!-- Right circle -->
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#000] translate-x-1/2 md:w-3 md:h-3"></div>
+                            </div>
                         </div>
                     </div>
+                    <!-- Display title -->
+                    <h2 class="text-center text-time-unit-xs font-bold leading-3 uppercase text-grayish-blue tracking-time-xs">days</h2>
                 </div>
-                <!-- Days time unit -->
-                <h2 class="text-center text-[0.4375rem] font-bold leading-3 uppercase text-grayish-blue tracking-[0.1875rem]">days</h2>
-            </div>
 
-            <!-- Countdown section -->
-            <div>
-                <!-- Hours -->
-                <div class="aspect-w-[35] aspect-h-[33] mb-3">
-                    <!-- Hours display -->
-                    <div class="perspective bg-dark-desaturated-blue rounded-[0.25rem]">
-                        <!-- Hours top pannel -->
-                        <div class="absolute top-0 left-0 w-full h-1/2 z-10 flex flex-row justify-center items-end overflow-hidden bg-very-dark-desaturated-blue">
-                            <!-- Hours bottom number -->
-                            <span class="hours-next-time block text-4xl leading-9 font-bold -tracking-[0.125rem] translate-y-1/2 text-soft-red"></span>
-                        </div>
-                        <!-- Hours flip pannel -->
-                        <div class="absolute z-20 top-0 left-0 w-full h-1/2 origin-bottom preserve-3d" id="hours-flip-pannel">
-                            <!-- Hours front face -->
-                            <div class="absolute top-0 left-0 flex flex-row justify-center items-end w-full h-full backface-hidden overflow-hidden bg-very-dark-desaturated-blue" id="hours-front-face">
-                                <!-- Hours bottom number -->
-                                <span class="hours-current-time block text-4xl leading-9 font-bold -tracking-[0.125rem] translate-y-1/2 text-soft-red"></span>
+                <!-- Countdown unit -->
+                <div class="text-center">
+                    <!-- Display -->
+                    <div class="w-display-xs h-display-xs rounded bg-[#000] overflow-hidden mb-2 sm:w-display-sm sm:h-display-sm md:rounded-lg md:w-display-md md:h-display-md lg:w-display-lg lg:h-display-lg">
+                        <!-- Pannel -->
+                        <div class="relative w-full h-pannel-xs perspective rounded overflow-hidden sm:h-pannel-sm md:rounded-lg md:h-pannel-md lg:h-pannel-lg">
+                            <!-- Top pannel -->
+                            <div class="flex w-full h-1/2 bg-very-dark-desaturated-blue overflow-hidden">
+                                <span class="hours-next-time block w-full mt-auto text-2xl leading-6 font-bold text-soft-red translate-y-1/2">00</span>
                             </div>
-                            <!-- Hours back face -->
-                            <div class="absolute top-0 left-0 flex flex-row justify-center items-start w-full h-full backface-hidden overflow-hidden bg-dark-desaturated-blue rotate-y-full">
-                                <!-- Hours top number -->
-                                <span class="hours-next-time block text-4xl leading-9 font-bold -tracking-[0.125rem] -translate-y-1/2 text-soft-red"></span>
+                            <!-- Bottom pannel -->
+                            <div class="w-full h-1/2 bg-dark-desaturated-blue overflow-hidden">
+                                <span class="hours-current-time block w-full text-2xl leading-6 font-bold text-soft-red -translate-y-1/2">00</span>
                             </div>
-                        </div>
-                        <!-- Hours bottom pannel -->
-                        <div class="absolute bottom-0 left-0 w-full h-1/2 flex flex-row justify-center items-start overflow-hidden bg-dark-desaturated-blue">
-                            <!-- Hours top number -->
-                            <span class="hours-current-time block text-4xl leading-9 font-bold -tracking-[0.125rem] -translate-y-1/2 text-soft-red"></span>
+                            <!-- Flip pannel -->
+                            <div class="absolute z-20 top-0 left-0 w-full h-1/2 origin-bottom preserve-3d" id="hours-flip-pannel">
+                                <!-- Front face -->
+                                <div class="absolute top-0 left-0 flex w-full h-full backface-hidden overflow-hidden bg-very-dark-desaturated-blue">
+                                    <span class="hours-current-time block w-full mt-auto text-2xl leading-6 font-bold text-soft-red translate-y-1/2">00</span>
+                                </div>
+                                <!-- Back face -->
+                                <div class="absolute top-0 left-0 w-full h-full backface-hidden overflow-hidden bg-dark-desaturated-blue rotate-y-full">
+                                    <span class="hours-next-time block w-full text-2xl leading-6 font-bold text-soft-red -translate-y-1/2">00</span>
+                                </div>
+                            </div>
+                            <!-- Circles -->
+                            <div class="absolute z-30 top-1/2 left-0 -translate-y-1/2 flex flex-row justify-between items-start w-full h-1.5 md:h-3">
+                                <!-- Left circle -->
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#000] -translate-x-1/2 md:w-3 md:h-3"></div>
+                                <!-- Right circle -->
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#000] translate-x-1/2 md:w-3 md:h-3"></div>
+                            </div>
                         </div>
                     </div>
+                    <!-- Display title -->
+                    <h2 class="text-center text-time-unit-xs font-bold leading-3 uppercase text-grayish-blue tracking-time-xs">hours</h2>
                 </div>
-                <!-- Hours time unit -->
-                <h2 class="text-center text-[0.4375rem] font-bold leading-3 uppercase text-grayish-blue tracking-[0.1875rem]">hours</h2>
-            </div>
 
-            <!-- Countdown section -->
-            <div>
-                <!-- Minutes -->
-                <div class="aspect-w-[35] aspect-h-[33] mb-3">
-                    <!-- Minutes display -->
-                    <div class="perspective bg-dark-desaturated-blue rounded-[0.25rem]">
-                        <!-- Minutes top pannel -->
-                        <div class="absolute top-0 left-0 w-full h-1/2 z-10 flex flex-row justify-center items-end overflow-hidden bg-very-dark-desaturated-blue">
-                            <!-- Minutes bottom number -->
-                            <span class="minutes-next-time block text-4xl leading-9 font-bold -tracking-[0.125rem] translate-y-1/2 text-soft-red"></span>
-                        </div>
-                        <!-- Minutes flip pannel -->
-                        <div class="absolute z-20 top-0 left-0 w-full h-1/2 origin-bottom preserve-3d" id="minutes-flip-pannel">
-                            <!-- Minutes front face -->
-                            <div class="absolute top-0 left-0 flex flex-row justify-center items-end w-full h-full backface-hidden overflow-hidden bg-very-dark-desaturated-blue" id="minutes-front-face">
-                                <!-- Minutes bottom number -->
-                                <span class="minutes-current-time block text-4xl leading-9 font-bold -tracking-[0.125rem] translate-y-1/2 text-soft-red"></span>
+                <!-- Countdown unit -->
+                <div class="text-center">
+                    <!-- Display -->
+                    <div class="w-display-xs h-display-xs rounded bg-[#000] overflow-hidden mb-2 sm:w-display-sm sm:h-display-sm md:rounded-lg md:w-display-md md:h-display-md lg:w-display-lg lg:h-display-lg">
+                        <!-- Pannel -->
+                        <div class="relative w-full h-pannel-xs perspective rounded overflow-hidden sm:h-pannel-sm md:rounded-lg md:h-pannel-md lg:h-pannel-lg">
+                            <!-- Top pannel -->
+                            <div class="flex w-full h-1/2 bg-very-dark-desaturated-blue overflow-hidden">
+                                <span class="minutes-next-time block w-full mt-auto text-2xl leading-6 font-bold text-soft-red translate-y-1/2">00</span>
                             </div>
-                            <!-- Minutes back face -->
-                            <div class="absolute top-0 left-0 flex flex-row justify-center items-start w-full h-full backface-hidden overflow-hidden bg-dark-desaturated-blue rotate-y-full">
-                                <!-- Minutes top number -->
-                                <span class="minutes-next-time block text-4xl leading-9 font-bold -tracking-[0.125rem] -translate-y-1/2 text-soft-red"></span>
+                            <!-- Bottom pannel -->
+                            <div class="w-full h-1/2 bg-dark-desaturated-blue overflow-hidden">
+                                <span class="minutes-current-time block w-full text-2xl leading-6 font-bold text-soft-red -translate-y-1/2">00</span>
                             </div>
-                        </div>
-                        <!-- Minutes bottom pannel -->
-                        <div class="absolute bottom-0 left-0 w-full h-1/2 flex flex-row justify-center items-start overflow-hidden bg-dark-desaturated-blue">
-                            <!-- Minutes top number -->
-                            <span class="minutes-current-time block text-4xl leading-9 font-bold -tracking-[0.125rem] -translate-y-1/2 text-soft-red"></span>
+                            <!-- Flip pannel -->
+                            <div class="absolute z-20 top-0 left-0 w-full h-1/2 origin-bottom preserve-3d" id="minutes-flip-pannel">
+                                <!-- Front face -->
+                                <div class="absolute top-0 left-0 flex w-full h-full backface-hidden overflow-hidden bg-very-dark-desaturated-blue">
+                                    <span class="minutes-current-time block w-full mt-auto text-2xl leading-6 font-bold text-soft-red translate-y-1/2">00</span>
+                                </div>
+                                <!-- Back face -->
+                                <div class="absolute top-0 left-0 w-full h-full backface-hidden overflow-hidden bg-dark-desaturated-blue rotate-y-full">
+                                    <span class="minutes-next-time block w-full text-2xl leading-6 font-bold text-soft-red -translate-y-1/2">00</span>
+                                </div>
+                            </div>
+                            <!-- Circles -->
+                            <div class="absolute z-30 top-1/2 left-0 -translate-y-1/2 flex flex-row justify-between items-start w-full h-1.5 md:h-3">
+                                <!-- Left circle -->
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#000] -translate-x-1/2 md:w-3 md:h-3"></div>
+                                <!-- Right circle -->
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#000] translate-x-1/2 md:w-3 md:h-3"></div>
+                            </div>
                         </div>
                     </div>
+                    <!-- Display title -->
+                    <h2 class="text-center text-time-unit-xs font-bold leading-3 uppercase text-grayish-blue tracking-time-xs">minutes</h2>
                 </div>
-                <!-- Minutes time unit -->
-                <h2 class="text-center text-[0.4375rem] font-bold leading-3 uppercase text-grayish-blue tracking-[0.1875rem]">minutes</h2>
-            </div>
 
-            <!-- Countdown section -->
-            <div>
-                <!-- Seconds -->
-                <div class="aspect-w-[35] aspect-h-[33] mb-3">
-                    <!-- Seconds display -->
-                    <div class="perspective bg-dark-desaturated-blue rounded-[0.25rem]">
-                        <!-- Seconds top pannel -->
-                        <div class="absolute top-0 left-0 w-full h-1/2 z-10 flex flex-row justify-center items-end overflow-hidden bg-very-dark-desaturated-blue">
-                            <!-- Seconds bottom number -->
-                            <span class="seconds-next-time block text-4xl leading-9 font-bold -tracking-[0.125rem] translate-y-1/2 text-soft-red"></span>
-                        </div>
-                        <!-- Seconds flip pannel -->
-                        <div class="absolute z-20 top-0 left-0 w-full h-1/2 origin-bottom preserve-3d" id="seconds-flip-pannel">
-                            <!-- Seconds front face -->
-                            <div class="absolute top-0 left-0 flex flex-row justify-center items-end w-full h-full backface-hidden overflow-hidden bg-very-dark-desaturated-blue" id="seconds-front-face">
-                                <!-- Seconds bottom number -->
-                                <span class="seconds-current-time block text-4xl leading-9 font-bold -tracking-[0.125rem] translate-y-1/2 text-soft-red"></span>
+                <!-- Countdown unit -->
+                <div class="text-center">
+                    <!-- Display -->
+                    <div class="w-display-xs h-display-xs rounded bg-[#000] overflow-hidden mb-2 sm:w-display-sm sm:h-display-sm md:rounded-lg md:w-display-md md:h-display-md lg:w-display-lg lg:h-display-lg">
+                        <!-- Pannel -->
+                        <div class="relative w-full h-pannel-xs perspective rounded overflow-hidden sm:h-pannel-sm md:rounded-lg md:h-pannel-md lg:h-pannel-lg">
+                            <!-- Top pannel -->
+                            <div class="flex w-full h-1/2 bg-very-dark-desaturated-blue overflow-hidden">
+                                <span class="seconds-next-time block w-full mt-auto text-2xl leading-6 font-bold text-soft-red translate-y-1/2">00</span>
                             </div>
-                            <!-- Seconds back face -->
-                            <div class="absolute top-0 left-0 flex flex-row justify-center items-start w-full h-full backface-hidden overflow-hidden bg-dark-desaturated-blue rotate-y-full">
-                                <!-- Seconds top number -->
-                                <span class="seconds-next-time block text-4xl leading-9 font-bold -tracking-[0.125rem] -translate-y-1/2 text-soft-red"></span>
+                            <!-- Bottom pannel -->
+                            <div class="w-full h-1/2 bg-dark-desaturated-blue overflow-hidden">
+                                <span class="seconds-current-time block w-full text-2xl leading-6 font-bold text-soft-red -translate-y-1/2">00</span>
                             </div>
-                        </div>
-                        <!-- Seconds bottom pannel -->
-                        <div class="absolute bottom-0 left-0 w-full h-1/2 flex flex-row justify-center items-start overflow-hidden bg-dark-desaturated-blue">
-                            <!-- Seconds top number -->
-                            <span class="seconds-current-time block text-4xl leading-9 font-bold -tracking-[0.125rem] -translate-y-1/2 text-soft-red"></span>
+                            <!-- Flip pannel -->
+                            <div class="absolute z-20 top-0 left-0 w-full h-1/2 origin-bottom preserve-3d" id="seconds-flip-pannel">
+                                <!-- Front face -->
+                                <div class="absolute top-0 left-0 flex w-full h-full backface-hidden overflow-hidden bg-very-dark-desaturated-blue">
+                                    <span class="seconds-current-time block w-full mt-auto text-2xl leading-6 font-bold text-soft-red translate-y-1/2">00</span>
+                                </div>
+                                <!-- Back face -->
+                                <div class="absolute top-0 left-0 w-full h-full backface-hidden overflow-hidden bg-dark-desaturated-blue rotate-y-full">
+                                    <span class="seconds-next-time block w-full text-2xl leading-6 font-bold text-soft-red -translate-y-1/2">00</span>
+                                </div>
+                            </div>
+                            <!-- Circles -->
+                            <div class="absolute z-30 top-1/2 left-0 -translate-y-1/2 flex flex-row justify-between items-start w-full h-1.5 md:h-3">
+                                <!-- Left circle -->
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#000] -translate-x-1/2 md:w-3 md:h-3"></div>
+                                <!-- Right circle -->
+                                <div class="w-1.5 h-1.5 rounded-full bg-[#000] translate-x-1/2 md:w-3 md:h-3"></div>
+                            </div>
                         </div>
                     </div>
+                    <!-- Display title -->
+                    <h2 class="text-center text-time-unit-xs font-bold leading-3 uppercase text-grayish-blue tracking-time-xs">seconds</h2>
                 </div>
-                <!-- Seconds time unit -->
-                <h2 class="text-center text-[0.4375rem] font-bold leading-3 uppercase text-grayish-blue tracking-[0.1875rem]">seconds</h2>
+
             </div>
 
-        </div>
-
-        <!-- Social medias -->
-        <div class="flex flex-row w-auto h-auto space-x-8 mt-auto">
-            <!-- Facebook -->
-            <svg class="w-6 h-auto cursor-pointer group" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path class="fill-grayish-blue transition-[fill] group-hover:fill-soft-red" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
-            </svg>
-            <!-- Pinterest -->
-            <svg class="w-6 h-auto cursor-pointer group" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path class="fill-grayish-blue transition-[fill] group-hover:fill-soft-red" d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
-            </svg>
-            <!-- Instagram -->
-            <svg class="w-6 h-auto cursor-pointer group" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path class="fill-grayish-blue transition-[fill] group-hover:fill-soft-red" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-            </svg>
-        </div>
+            <!-- Social medias -->
+            <div class="flex flex-row w-auto h-auto space-x-8 mt-auto">
+                <!-- Facebook -->
+                <svg class="w-6 h-auto cursor-pointer group" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path class="fill-grayish-blue transition-[fill] group-hover:fill-soft-red" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
+                </svg>
+                <!-- Pinterest -->
+                <svg class="w-6 h-auto cursor-pointer group" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path class="fill-grayish-blue transition-[fill] group-hover:fill-soft-red" d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
+                </svg>
+                <!-- Instagram -->
+                <svg class="w-6 h-auto cursor-pointer group" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path class="fill-grayish-blue transition-[fill] group-hover:fill-soft-red" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+            </div>
+        </main>
       
         <script type="module" src="/src/main.ts"></script>
     </body>

@@ -95,8 +95,6 @@ class Countdown {
      * 
      * If the time unit is less than 10, prepend the returned string with a 0.
      * 
-     * @param {number} timeValue 
-     * @returns {string} The formated time value as a string.
      */
     private formatTimeUnit(timeValue: number) {
         return timeValue > 9 ? String(timeValue) : `0${timeValue}`;
