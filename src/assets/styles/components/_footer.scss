@@ -14,4 +14,8 @@
         background-size: cover;
         padding-top: 10.1rem;
     }
+
+    @media screen and (min-width: variables.$screen-xl) {
+        padding-top: 16.4rem;
+    }
 }

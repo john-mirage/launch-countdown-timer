@@ -10,4 +10,8 @@
     background-repeat: no-repeat;
     background-position: bottom 3.2rem center;
     background-size: cover;
+
+    @media screen and (min-width: variables.$screen-lg) {
+        padding-bottom: 14.8rem;
+    }
 }
