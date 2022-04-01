@@ -1,0 +1,29 @@
+@use "../variables";
+
+.countdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    @media screen and (min-width: variables.$screen-xs) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__unit {
+        text-align: center;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 0.7rem;
+        font-weight: 700;
+        line-height: 1.2rem;
+        text-transform: uppercase;
+        color: variables.$color-grayish-blue;
+        letter-spacing: 0.3rem;
+    }
+}

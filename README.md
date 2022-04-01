@@ -38,4 +38,4 @@ Users should be able to:
 - Flexbox, Grid
 - Mobile-first workflow
 - [Vitejs](https://vitejs.dev/) - For toolchain
-- [Tailwind](https://tailwindcss.com/) - For styles and theme
+- [Sass](https://sass-lang.com/) - For styles and theme

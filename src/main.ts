@@ -1,4 +1,4 @@
-import './assets/styles/style.css';
+import './assets/styles/main.scss';
 import Countdown from './assets/scripts/countdown';
 
 const countdown = new Countdown({

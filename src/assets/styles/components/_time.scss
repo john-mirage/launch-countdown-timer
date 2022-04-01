@@ -1,0 +1,149 @@
+@use "../variables";
+
+.time {
+    width: 5.3rem;
+    height: 5.3rem;
+    border-radius: 0.4rem;
+    background-color: variables.$color-black;
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+
+    @media screen and (min-width: variables.$screen-sm) {
+        width: 6.8rem;
+        height: 6.8rem;
+    }
+
+    @media screen and (min-width: variables.$screen-md) {
+        width: 10.6rem;
+        height: 10.6rem;
+        border-radius: 0.8rem;
+    }
+
+    @media screen and (min-width: variables.$screen-lg) {
+        width: 14.8rem;
+        height: 14.8rem;
+    }
+
+    &__display {
+        position: relative;
+        width: 100%;
+        height: 5rem;
+        perspective: 30rem;
+        border-radius: 0.4rem;
+        overflow: hidden;
+
+        @media screen and (min-width: variables.$screen-sm) {
+            height: 6.4rem;
+        }
+
+        @media screen and (min-width: variables.$screen-md) {
+            height: 10rem;
+            border-radius: 0.8rem;
+        }
+
+        @media screen and (min-width: variables.$screen-lg) {
+            height: 13.9rem;
+        }
+    }
+
+    &__pannel {
+        width: 100%;
+        height: 50%;
+
+        &--top {
+            display: flex;
+            background-color: variables.$color-very-dark-desaturated-blue;
+            overflow: hidden;
+        }
+
+        &--bottom {
+            background-color: variables.$color-dark-desaturated-blue;
+            overflow: hidden;
+        }
+
+        &--flip {
+            position: absolute;
+            z-index: 20;
+            top: 0;
+            left: 0;
+            transform-origin: bottom;
+            transform-style: preserve-3d;
+        }
+    }
+
+    &__face {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        overflow: hidden;
+
+        &--front {
+            display: flex;
+            background-color: variables.$color-very-dark-desaturated-blue;
+        }
+
+        &--back {
+            background-color: variables.$color-dark-desaturated-blue;
+            transform: rotateY(180deg) rotate(180deg);
+        }
+    }
+
+    &__number {
+        display: block;
+        width: 100%;
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 2.4rem;
+        color: variables.$color-soft-red;
+
+        &--next {
+            margin-top: auto;
+            transform: translateY(50%);
+        }
+
+        &--current {
+            transform: translateY(-50%);
+        }
+    }
+
+    &__circles {
+        position: absolute;
+        z-index: 30;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        height: 0.6rem;
+
+        @media screen and (min-width: variables.$screen-md) {
+            height: 1.2rem;
+        }
+    }
+
+    &__circle {
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 9999px;
+        background-color: variables.$color-black;
+        
+        @media screen and (min-width: variables.$screen-md) {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+
+        &--left {
+            transform: translateX(-50%);
+        }
+
+        &--right {
+            transform: translateX(50%);
+        }
+    }
+}

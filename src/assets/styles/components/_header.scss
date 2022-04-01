@@ -1,0 +1,15 @@
+.header {
+    width: 100%;
+    height: auto;
+
+    &__title {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 2.4rem;
+        letter-spacing: 0.6rem;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 5.6rem;
+    }
+}

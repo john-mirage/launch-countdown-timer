@@ -1,0 +1,29 @@
+@use "../variables";
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    margin-top: auto;
+
+    &__icon {
+        width: 2.4rem;
+        height: auto;
+        cursor: pointer;
+        margin-right: 3.2rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__icon-path {
+        fill: variables.$color-grayish-blue;
+        transition: fill 150ms;
+
+        .footer__icon:hover & {
+            fill: variables.$color-soft-red;
+        }
+    }
+}
