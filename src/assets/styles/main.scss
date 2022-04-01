@@ -1,7 +1,10 @@
 @use "./globals";
 
 @use "./components/page";
+@use "./components/container";
+@use "./components/hero";
 @use "./components/header";
 @use "./components/countdown";
 @use "./components/time";
 @use "./components/footer";
+@use "./components/social-medias";

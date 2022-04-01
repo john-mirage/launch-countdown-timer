@@ -6,6 +6,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    height: auto;
 
     @media screen and (min-width: variables.$screen-xs) {
         flex-direction: row;
@@ -15,6 +16,11 @@
 
     &__unit {
         text-align: center;
+        margin-bottom: 0.8rem;
+
+        @media screen and (min-width: variables.$screen-xs) {
+            margin-bottom: 0;
+        }
     }
 
     &__title {
@@ -25,5 +31,12 @@
         text-transform: uppercase;
         color: variables.$color-grayish-blue;
         letter-spacing: 0.3rem;
+        margin-top: 0.8rem;
+
+        @media screen and (min-width: variables.$screen-lg) {
+            font-size: 1.4rem;
+            letter-spacing: 0.6rem;
+            margin-top: 1.6rem;
+        }
     }
 }

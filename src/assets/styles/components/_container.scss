@@ -1,0 +1,30 @@
+@use "../variables";
+
+.container {
+    width: 100%;
+    height: auto;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+
+    @media screen and (min-width: variables.$screen-xs) {
+        max-width: variables.$screen-xs;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media screen and (min-width: variables.$screen-sm) {
+        max-width: variables.$screen-sm;
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
+    }
+
+    @media screen and (min-width: variables.$screen-md) {
+        max-width: variables.$screen-md;
+        padding-left: 3.2rem;
+        padding-right: 3.2rem;
+    }
+
+    @media screen and (min-width: variables.$screen-lg) {
+        max-width: variables.$screen-lg;
+    }
+}

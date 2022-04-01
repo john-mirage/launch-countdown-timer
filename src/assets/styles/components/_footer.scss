@@ -1,29 +1,17 @@
 @use "../variables";
 
 .footer {
-    display: flex;
-    flex-direction: row;
-    width: auto;
+    width: 100%;
     height: auto;
-    margin-top: auto;
+    padding-top: 9.6rem;
+    background-image: url("/src/assets/images/pattern-hills.svg");
+    background-repeat: no-repeat;
+    background-position: right -6.4rem top;
+    background-size: auto 12.4rem;
 
-    &__icon {
-        width: 2.4rem;
-        height: auto;
-        cursor: pointer;
-        margin-right: 3.2rem;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-
-    &__icon-path {
-        fill: variables.$color-grayish-blue;
-        transition: fill 150ms;
-
-        .footer__icon:hover & {
-            fill: variables.$color-soft-red;
-        }
+    @media screen and (min-width: variables.$screen-lg) {
+        background-position: top center;
+        background-size: cover;
+        padding-top: 10.1rem;
     }
 }

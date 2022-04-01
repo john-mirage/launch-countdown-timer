@@ -1,0 +1,13 @@
+@use "../variables";
+
+.hero {
+    flex: 1 1 0%;
+    width: 100%;
+    height: auto;
+    padding-top: 14.2rem;
+    padding-bottom: 16.4rem;
+    background-image: url("/src/assets/images/bg-stars.svg");
+    background-repeat: no-repeat;
+    background-position: bottom 3.2rem center;
+    background-size: cover;
+}
