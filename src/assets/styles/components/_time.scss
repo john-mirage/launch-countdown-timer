@@ -27,23 +27,24 @@
         position: relative;
         width: 100%;
         height: variables.$pannel-xs;
-        perspective: 30rem;
+        perspective: 5.3rem;
         border-radius: 0.4rem;
         overflow: hidden;
 
         @media screen and (min-width: variables.$screen-sm) {
             height: variables.$pannel-sm;
+            perspective: 6.8rem;
         }
 
         @media screen and (min-width: variables.$screen-md) {
             height: variables.$pannel-md;
             border-radius: 0.8rem;
-            perspective: 80rem;
+            perspective: 10.6rem;
         }
 
         @media screen and (min-width: variables.$screen-lg) {
             height: variables.$pannel-lg;
-            perspective: 16rem;
+            perspective: 14.8rem;
         }
     }
 
