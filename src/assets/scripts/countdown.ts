@@ -72,9 +72,12 @@ class Countdown {
      * 
      */
     private getTimeLeft() {
+        /*
         const eventDateTime = new Date(EVENT_DATE_TIME).getTime();
         const currentDateTime = Date.now();
         return Math.round((eventDateTime - currentDateTime) / 1000);
+        */
+        return 1209600; // 14 days
     }
 
     /**
