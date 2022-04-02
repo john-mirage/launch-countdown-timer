@@ -23,7 +23,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Project screenshot]()
+![Project screenshot](docs/launch-countdown-timer.png)
 
 ### Links
 
