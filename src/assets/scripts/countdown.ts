@@ -12,7 +12,7 @@ interface TimeHtmlElements {
     seconds: TimeUnitHtmlElements;
 }
 
-const EVENT_DATE_TIME = "2022-04-10T20:00:00";
+//const EVENT_DATE_TIME = "2022-04-10T20:00:00";
 
 const flipAnimationOptions = { rotateX: -180, duration: 0.5 };
 
