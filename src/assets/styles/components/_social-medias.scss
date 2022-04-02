@@ -7,7 +7,7 @@
     align-items: flex-start;
     width: 100%;
     height: auto;
-    background-color: variables.$color-footer-bg;
+    background-color: variables.$color-social-medias;
     padding-bottom: 4.8rem;
 
     @media screen and (min-width: variables.$screen-lg) {
@@ -15,10 +15,10 @@
         background-color: transparent;
     }
 
-    &__icon {
-        width: 2.4rem;
+    &__link {
+        display: block;
+        width: auto;
         height: auto;
-        cursor: pointer;
         margin-right: 3.2rem;
 
         &:last-child {
@@ -26,12 +26,17 @@
         }
     }
 
+    &__icon {
+        width: 2.4rem;
+        height: auto;
+    }
+
     &__icon-path {
-        fill: variables.$color-grayish-blue;
+        fill: variables.$color-social-medias-icon;
         transition: fill 150ms;
 
-        .social-medias__icon:hover & {
-            fill: variables.$color-soft-red;
+        .social-medias__link:hover > .social-medias__icon > & {
+            fill: variables.$color-social-medias-icon-hover;
         }
     }
 }

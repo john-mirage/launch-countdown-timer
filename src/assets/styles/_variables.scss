@@ -1,14 +1,15 @@
-$color-grayish-blue: hsl(237, 18%, 59%);
-$color-soft-red: hsl(345, 95%, 68%);
-$color-white: hsl(0, 0%, 100%);
-$color-black: hsl(0, 0%, 0%);
-$color-dark-desaturated-blue: hsl(236, 21%, 26%);
-$color-very-dark-desaturated-blue: #2C2C44;
-$color-very-dark-blue: hsl(235, 16%, 14%);
-$color-background-to: #211A29;
-$color-time-shadow: #1A1A24;
-$color-footer-bg: #2F2439;
-$color-number-top: #D54F70;
+$color-page-gradient: linear-gradient(to bottom, hsl(235, 16%, 14%), hsl(268, 23%, 14%));
+$color-header-title: hsl(0, 0%, 100%);
+$color-countdown-title: hsl(237, 18%, 59%);
+$color-time-shadow: hsl(240, 16%, 12%);
+$color-time-pannel-top: hsl(240, 21%, 22%);
+$color-time-pannel-bottom: hsl(236, 21%, 26%);
+$color-time-number-top: hsl(345, 61%, 57%);
+$color-time-number-bottom: hsl(345, 95%, 68%);
+$color-time-circle: hsl(240, 16%, 12%);
+$color-social-medias: hsl(271, 23%, 18%);
+$color-social-medias-icon: hsl(237, 18%, 59%);
+$color-social-medias-icon-hover: hsl(345, 95%, 68%);
 
 $screen-xs: 280px;
 $screen-sm: 368px;

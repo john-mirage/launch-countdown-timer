@@ -52,12 +52,12 @@
         height: 50%;
 
         &--top {
-            background-color: variables.$color-very-dark-desaturated-blue;
+            background-color: variables.$color-time-pannel-top;
             overflow: hidden;
         }
 
         &--bottom {
-            background-color: variables.$color-dark-desaturated-blue;
+            background-color: variables.$color-time-pannel-bottom;
             overflow: hidden;
         }
 
@@ -81,11 +81,11 @@
         overflow: hidden;
 
         &--front {
-            background-color: variables.$color-very-dark-desaturated-blue;
+            background-color: variables.$color-time-pannel-top;
         }
 
         &--back {
-            background-color: variables.$color-dark-desaturated-blue;
+            background-color: variables.$color-time-pannel-bottom;
             transform: rotateY(180deg) rotate(180deg);
         }
     }
@@ -114,12 +114,12 @@
         }
 
         &--top {
-            color: variables.$color-number-top;
+            color: variables.$color-time-number-top;
             transform: translateY(50%);
         }
 
         &--bottom {
-            color: variables.$color-soft-red;
+            color: variables.$color-time-number-bottom;
             transform: translateY(-50%);
         }
     }
@@ -146,7 +146,7 @@
         width: 0.6rem;
         height: 0.6rem;
         border-radius: 9999px;
-        background-color: variables.$color-time-shadow;
+        background-color: variables.$color-time-circle;
         
         @media screen and (min-width: variables.$screen-md) {
             width: 1.2rem;

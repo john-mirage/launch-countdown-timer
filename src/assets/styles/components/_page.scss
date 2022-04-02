@@ -7,5 +7,5 @@
     align-items: flex-start;
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(to bottom, variables.$color-very-dark-blue, variables.$color-background-to);
+    background: variables.$color-page-gradient;
 }
